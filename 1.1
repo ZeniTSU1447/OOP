@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+class matrix {
+private:
+    int a11, a12, a21, a22;
+
+    int trace() const {
+        return a11 + a22;
+    }
+public:
+    matrix() {
+        a11 = a12 = a21 = a22 = 0;
+    }
+
+    matrix(int b11, int b12, int b21, int b22) : a11(b11), a12(b12), a21(b21), a22(b22) {}
+
+    int operator+() const{
+        return trace();
+    }
+
+    int operator-() const{
+        return -trace();
+    }
+
+    bool operator<(const matrix& other) const {
+        return +*this < +other;
+    }
+};
+
+int main()
+{
+    matrix m(1, 1, 1, 1);
+    matrix m1(2, 2, 2, 2);
+
+    cout << (m < m1);
+    return 0;
+}
