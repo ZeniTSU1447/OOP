@@ -11,11 +11,7 @@ public:
         return a11 + a22;
     }
 
-    matrix() {
-        a11 = a12 = a21 = a22 = 0;
-    }
-
-    matrix(int b11, int b12, int b21, int b22) : a11(b11), a12(b12), a21(b21), a22(b22) {}
+    matrix(int b11 = 0, int b12 = 0, int b21 = 0, int b22 = 0) : a11(b11), a12(b12), a21(b21), a22(b22) {}
 
     int operator+() const{
         return a12 + a21;
